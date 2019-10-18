@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>9_events</title>
+        <script src="js/myScript.js"></script>
+
+        <script>
+                       
+            function getQueryValue() {
+                // load the URL into a variable
+                var url = window.location.href;
+                console.log(url);
+                // split the url by the ?
+                var urlParts = url.split("?");
+                console.log(urlParts);
+                // extract query value after the ?
+                var query = urlParts[1];
+                console.log("query:" + query);
+                if (query == "E") {
+                    document.getElementById("recipe").placeholder = "Ingredients\n\n" + "6 egg yolks\n" +
+                        "3/4 cup white sugar\n" + "2/3 cup milk\n" + " 1 1/4 cups heavy cream\n" +
+                        "1/2 teaspoon vanilla extract\n" + "1 pound mascarpone cheese\n" +
+                        "1/4 cup strong brewed coffee, room temperature\n" + "2 tablespoons rum\n" +
+                        "2 (3 ounce) packages ladyfinger cookies\n" +
+                        "1 tablespoon unsweetened cocoa powder";
+                        document.getElementById("flag").src = "img/english.png";
+                } else {    
+                    document.getElementById("recipe").placeholder = "Ingredienti\n\n" +
+                        "6 tuorli d'uovo\n" + "3/4 tazza di zucchero bianco\n" +
+                        "2/3 tazza di latte\n" + "1 1/4 tazze di panna\n" +
+                        "1/2 cucchiaino di estratto di vaniglia\n" + "1 chilo di mascarpone\n" +
+                        "1/4 tazza di caffè preparato forte, temperatura ambiente\n" +
+                        "2 cucchiai di rum\n" + "2 (3 once) pacchetti biscotti savoiardo\n" +
+                        "1 cucchiaio di cacao amaro in polvere";
+                    document.getElementById("flag").src = "img/italian.png";
+                }
+            }
+
+        </script>
+
+        <link rel="stylesheet" href="css/mycss.css">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+                 integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47"
+                 crossorigin="anonymous">
+    </head>
+    <body onload="getQueryValue()">
+        <div>
+            <form id="inputForm" class="pure-form">
+                <fieldset>
+                    <legend>Task: 9_events / page2.html / Tiramisu</legend>
+                    <br>
+                    <img id="flag" height="32" width="32">
+                    <br>
+                    <textarea id="recipe" cols="96" rows="12"></textarea><br><br>
+                    <a class="pure-button" href="index.html">&nbsp;&#9746;&nbsp;</a>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>

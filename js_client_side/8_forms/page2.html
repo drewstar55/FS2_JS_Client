@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>8_forms</title>
+        <script src="js/myScript.js"></script>
+        <link rel="stylesheet" href="css/mycss.css">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    </head>
+    <body>
+        <div>
+            <form id="inputForm" class="pure-form pure-form-stacked">
+                <fieldset>
+                    <legend>Task: 8_forms / page2.html</legend><br><br>
+                    <label for="txtFirstName">First Name</label>    
+                    <input id="txtFirstName" type="text" placeholder="First Name">
+                    <label for="txtSurname">Last Name</label> 
+                    <input id="txtSurname" type="text" placeholder="Last Name"><br><br>
+                    <a class="pure-button" href="index.html">Go Back</a><br><br>
+                    <a class="pure-button" onClick="processName()">Submit Form</a>    
+                </fieldset>
+            </form>
+            <p id="txtOutput"></p>
+            <p id="msgBox"></p>
+        </div>
+    </body>
+</html>

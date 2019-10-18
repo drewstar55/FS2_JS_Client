@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>9_events</title>
+        <script src="js/myScript.js"></script>
+
+        <script>
+                       
+            function getQueryValue() {
+                // load the URL into a variable
+                var url = window.location.href;
+                console.log(url);
+                // split the url by the ?
+                var urlParts = url.split("?");
+                console.log(urlParts);
+                // extract query value after the ?
+                var query = urlParts[1];
+                console.log("query:" + query);
+                if (query == "E") {
+                    document.getElementById("recipe").placeholder = "Ingredients\n\n" +
+                        "8 large egg yolks, at room temperature\n" + "3/4 cup dry marsala\n" +
+                        "1/2 cup sugar\n" + "1 pint strawberries, sliced";
+                        document.getElementById("flag").src = "img/english.png";
+                } else {    
+                    document.getElementById("recipe").placeholder = "Ingredienti\n\n" +
+                        "8 grandi tuorli d'uovo, a temperatura ambiente\n" + "3/4 di tazza di marsala secco\n" +
+                        "1/2 tazza di zucchero\n" + "1 fragola pinta, affettata";
+                    document.getElementById("flag").src = "img/italian.png";
+                }
+            }
+
+        </script>
+
+        <link rel="stylesheet" href="css/mycss.css">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+                 integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47"
+                 crossorigin="anonymous">
+    </head>
+    <body onload="getQueryValue()">
+        <div>
+            <form id="inputForm" class="pure-form">
+                <fieldset>
+                    <legend>Task: 9_events / page1.html / Zabaglione</legend>
+                    <br>
+                    <img id="flag" height="32" width="32">
+                    <br>
+                    <textarea id="recipe" cols="96" rows="12"></textarea><br><br>
+                    <a class="pure-button" href="index.html">&nbsp;&#9746;&nbsp;</a>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>9_events</title>
+        <script src="js/myScript.js"></script>
+        <script>
+           
+           function getQueryValue() {
+                // load the URL into a variable
+                var url = window.location.href;
+                console.log(url);
+                // split the url by the ?
+                var urlParts = url.split("?");
+                console.log(urlParts);
+                // extract query value after the ?
+                var query = urlParts[1];
+                console.log("query:" + query);
+                if (query == "E") {
+                    document.getElementById("recipe").placeholder = "Ingredients\n\n" +
+                        "1/2 cup vegetable oil\n" + "1 cup white sugar\n" +
+                        "3 1/4 cups all-purpose flour\n" + "3 eggs\n" +
+                        "1 tablespoon baking powder\n" +
+                        "1 tablespoon anise extract, or 3 drops anise oil";
+                        document.getElementById("flag").src = "img/english.png";
+                } else {    
+                    document.getElementById("recipe").placeholder = "Ingredienti\n\n" +
+                        "1/2 tazza di olio vegetale\n" + "1 tazza di zucchero bianco\n" +
+                        "3 1/4 tazze di farina per tutti gli usi\n" + "3 uova\n" +
+                        "1 cucchiaio di lievito in polvere\n" +
+                        "1 cucchiaio di estratto di anice o 3 gocce di olio di anice";
+                    document.getElementById("flag").src = "img/italian.png";
+                }
+            }
+
+        </script>
+
+        <link rel="stylesheet" href="css/mycss.css">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+                 integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47"
+                 crossorigin="anonymous">
+    </head>
+    <body onload="getQueryValue()">
+        <div>
+            <form id="inputForm" class="pure-form">
+                <fieldset>
+                    <legend>Task: 9_events / page1.html / Biscotti</legend>
+                    <br>
+                    <img id="flag" height="32" width="32">
+                    <br>
+                    <textarea id="recipe" cols="96" rows="12"></textarea><br><br>
+                    <a class="pure-button" href="index.html">&nbsp;&#9746;&nbsp;</a>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
