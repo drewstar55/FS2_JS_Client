@@ -7,32 +7,34 @@
         <script>
                        
             function getQueryValue() {
-                // load the URL into a variable
-                var url = window.location.href;
-                console.log(url);
-                // split the url by the ?
-                var urlParts = url.split("?");
-                console.log(urlParts);
-                // extract query value after the ?
-                var query = urlParts[1];
-                console.log("query:" + query);
-                if (query == "E") {
-                    document.getElementById("recipe").placeholder = "Ingredients\n\n" + "6 egg yolks\n" +
-                        "3/4 cup white sugar\n" + "2/3 cup milk\n" + " 1 1/4 cups heavy cream\n" +
-                        "1/2 teaspoon vanilla extract\n" + "1 pound mascarpone cheese\n" +
-                        "1/4 cup strong brewed coffee, room temperature\n" + "2 tablespoons rum\n" +
-                        "2 (3 ounce) packages ladyfinger cookies\n" +
-                        "1 tablespoon unsweetened cocoa powder";
-                        document.getElementById("flag").src = "img/english.png";
-                } else {    
-                    document.getElementById("recipe").placeholder = "Ingredienti\n\n" +
-                        "6 tuorli d'uovo\n" + "3/4 tazza di zucchero bianco\n" +
-                        "2/3 tazza di latte\n" + "1 1/4 tazze di panna\n" +
-                        "1/2 cucchiaino di estratto di vaniglia\n" + "1 chilo di mascarpone\n" +
-                        "1/4 tazza di caffè preparato forte, temperatura ambiente\n" +
-                        "2 cucchiai di rum\n" + "2 (3 once) pacchetti biscotti savoiardo\n" +
-                        "1 cucchiaio di cacao amaro in polvere";
-                    document.getElementById("flag").src = "img/italian.png";
+                try {
+                    // load the URL into a variable
+                    var url = window.location.href;
+                    // split the url by the ?
+                    var urlParts = url.split("?");
+                    // extract query value after the ?
+                    var query = urlParts[1];
+                    if (query == "E") {
+                        document.getElementById("recipe").placeholder = "Ingredients\n\n" + "6 egg yolks\n" +
+                            "3/4 cup white sugar\n" + "2/3 cup milk\n" + "1 1/4 cups heavy cream\n" +
+                            "1/2 teaspoon vanilla extract\n" + "1 pound mascarpone cheese\n" +
+                            "1/4 cup strong brewed coffee, room temperature\n" + "2 tablespoons rum\n" +
+                            "2 (3 ounce) packages ladyfinger cookies\n" +
+                            "1 tablespoon unsweetened cocoa powder";
+                            document.getElementById("flag").src = "img/english.png";
+                    } else {    
+                        document.getElementById("recipe").placeholder = "Ingredienti\n\n" +
+                            "6 tuorli d'uovo\n" + "3/4 tazza di zucchero bianco\n" +
+                            "2/3 tazza di latte\n" + "1 1/4 tazze di panna\n" +
+                            "1/2 cucchiaino di estratto di vaniglia\n" + "1 chilo di mascarpone\n" +
+                            "1/4 tazza di caffè preparato forte, temperatura ambiente\n" +
+                            "2 cucchiai di rum\n" + "2 (3 once) pacchetti biscotti savoiardo\n" +
+                            "1 cucchiaio di cacao amaro in polvere";
+                        document.getElementById("flag").src = "img/italian.png";
+                    }
+                }
+                catch(err) {
+                    console.log("Error" + err);
                 }
             }
 

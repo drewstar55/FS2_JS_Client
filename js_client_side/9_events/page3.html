@@ -7,25 +7,27 @@
         <script>
                        
             function getQueryValue() {
-                // load the URL into a variable
-                var url = window.location.href;
-                console.log(url);
-                // split the url by the ?
-                var urlParts = url.split("?");
-                console.log(urlParts);
-                // extract query value after the ?
-                var query = urlParts[1];
-                console.log("query:" + query);
-                if (query == "E") {
-                    document.getElementById("recipe").placeholder = "Ingredients\n\n" +
-                        "8 large egg yolks, at room temperature\n" + "3/4 cup dry marsala\n" +
-                        "1/2 cup sugar\n" + "1 pint strawberries, sliced";
-                        document.getElementById("flag").src = "img/english.png";
-                } else {    
-                    document.getElementById("recipe").placeholder = "Ingredienti\n\n" +
-                        "8 grandi tuorli d'uovo, a temperatura ambiente\n" + "3/4 di tazza di marsala secco\n" +
-                        "1/2 tazza di zucchero\n" + "1 fragola pinta, affettata";
-                    document.getElementById("flag").src = "img/italian.png";
+                try {
+                    // load the URL into a variable
+                    var url = window.location.href;
+                    // split the url by the ?
+                    var urlParts = url.split("?");
+                    // extract query value after the ?
+                    var query = urlParts[1];
+                    if (query == "E") {
+                        document.getElementById("recipe").placeholder = "Ingredients\n\n" +
+                            "8 large egg yolks, at room temperature\n" + "3/4 cup dry marsala\n" +
+                            "1/2 cup sugar\n" + "1 pint strawberries, sliced";
+                            document.getElementById("flag").src = "img/english.png";
+                    } else {    
+                        document.getElementById("recipe").placeholder = "Ingredienti\n\n" +
+                            "8 grandi tuorli d'uovo, a temperatura ambiente\n" + "3/4 di tazza di marsala secco\n" +
+                            "1/2 tazza di zucchero\n" + "1 fragola pinta, affettata";
+                        document.getElementById("flag").src = "img/italian.png";
+                    }
+                }
+                catch(err) {
+                    console.log("Error" + err);
                 }
             }
 
